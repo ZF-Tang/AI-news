@@ -1,0 +1,44 @@
+[
+  {
+    "src": "GPT live 语音v1.7.html",
+    "slug": "gpt-live",
+    "title": "GPT live语音，真正改变的，是交互思维方式",
+    "date": "2026-08-01",
+    "excerpt": "不是你说完、它再说的录音式语音，而是能边听边说、随时打断的持续对话。实测之后，这是人机交互效率的一次明显提升。",
+    "original_mb": 4.99,
+    "html_mb": 0.01,
+    "media_mb": 3.68,
+    "images": 2,
+    "videos": 1,
+    "cover": "articles/gpt-live/media/image-01.jpg",
+    "href": "articles/gpt-live/"
+  },
+  {
+    "src": "平价战神v4.html",
+    "slug": "pingjia-zhanshen",
+    "title": "谁是平价战神，千问、智谱、Grok横评",
+    "date": "2026-07-27",
+    "excerpt": "顶尖模型很强，但贵，还有网络、付费和封号成本。这期横评平价高分模型：千问、智谱、Grok。",
+    "original_mb": 34.5,
+    "html_mb": 0.02,
+    "media_mb": 24.97,
+    "images": 11,
+    "videos": 6,
+    "cover": "articles/pingjia-zhanshen/media/image-01.jpg",
+    "href": "articles/pingjia-zhanshen/"
+  },
+  {
+    "src": "starmind v7.html",
+    "slug": "starmind",
+    "title": "马斯克的疯狂赌注：把100GW AI算力送上太空",
+    "date": "2026-07-06",
+    "excerpt": "SpaceX 的 AI 卫星项目命名为 Starmind，目标是把巨量算力送上轨道。地面算力好建也好维护，为什么要送上天？",
+    "original_mb": 1.02,
+    "html_mb": 0.02,
+    "media_mb": 0.18,
+    "images": 2,
+    "videos": 0,
+    "cover": "articles/starmind/media/image-01.jpg",
+    "href": "articles/starmind/"
+  }
+]

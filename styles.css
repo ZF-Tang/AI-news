@@ -112,14 +112,6 @@ header.site {
   padding-right: 28px;
 }
 
-.date {
-  margin: 0 0 8px;
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-}
-
 .card h2 {
   margin: 0 0 10px;
   font-size: 22px;

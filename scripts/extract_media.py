@@ -16,6 +16,20 @@ OUT_DIR = ROOT / "articles"
 
 ARTICLES = [
     {
+        "src": "只给盾不给矛 v3.html",
+        "slug": "zhi-gei-dun",
+        "title": "只给盾，不给矛？Anthropic的网安新模式",
+        "date": "2026-08-21",
+        "excerpt": "最强网安模型可以给企业用了，但开放的不是模型，而是一份扫描报告。矛收在自己手里，只替你撑起盾。",
+    },
+    {
+        "src": "AI月报_2026年07月_v5.html",
+        "slug": "ai-yuebao-2026-07",
+        "title": "每月AI洞见：Transformer还在狂飙",
+        "date": "2026-07-31",
+        "excerpt": "AI新闻千千万，过段时间再看大都不值得关注。本月4条最重要的新闻，对应5个洞见。",
+    },
+    {
         "src": "GPT live 语音v1.7.html",
         "slug": "gpt-live",
         "title": "GPT live语音，真正改变的，是交互思维方式",
@@ -60,7 +74,12 @@ body{padding-top:56px !important;}
 """
 
 DATA_URI = re.compile(
-    r'(src\s*=\s*")data:(image|video)/([a-zA-Z0-9.+-]+);base64,([^"]+)(")',
+    r'((?:src|poster)\s*=\s*")data:(image|video)/([a-zA-Z0-9.+-]+);base64,([^"]+)(")',
+    re.IGNORECASE,
+)
+
+REL_SRC = re.compile(
+    r'(src\s*=\s*")((?!data:|https?:|//|media/)[^"]+\.(?:mp4|webm|mov|png|jpe?g|gif|webp))(")',
     re.IGNORECASE,
 )
 
@@ -122,6 +141,22 @@ def process(article: dict) -> dict:
         return f'{prefix}{rel}{suffix}'
 
     html = DATA_URI.sub(repl, html)
+
+    def copy_rel(match: re.Match) -> str:
+        prefix, rel, suffix = match.groups()
+        rel_norm = rel.replace("\\", "/")
+        candidate = (src_path.parent / rel_norm)
+        if not candidate.exists():
+            print(f"  missing relative media: {rel}")
+            return match.group(0)
+        kind = "video" if candidate.suffix.lower() in {".mp4", ".webm", ".mov"} else "image"
+        counters[kind] += 1
+        n = counters[kind]
+        dest = media_dir / f"{kind}-{n:02d}{candidate.suffix.lower()}"
+        dest.write_bytes(candidate.read_bytes())
+        return f"{prefix}{dest.relative_to(out_dir).as_posix()}{suffix}"
+
+    html = REL_SRC.sub(copy_rel, html)
 
     if re.search(r"<body[^>]*>", html, re.IGNORECASE):
         html = re.sub(r"(<body[^>]*>)", r"\1" + NAV_HTML, html, count=1, flags=re.IGNORECASE)

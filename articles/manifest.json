@@ -1,5 +1,33 @@
 [
   {
+    "src": "只给盾不给矛 v3.html",
+    "slug": "zhi-gei-dun",
+    "title": "只给盾，不给矛？Anthropic的网安新模式",
+    "date": "2026-08-21",
+    "excerpt": "最强网安模型可以给企业用了，但开放的不是模型，而是一份扫描报告。矛收在自己手里，只替你撑起盾。",
+    "original_mb": 0.39,
+    "html_mb": 0.01,
+    "media_mb": 0.12,
+    "images": 1,
+    "videos": 0,
+    "cover": "articles/zhi-gei-dun/media/image-01.jpg",
+    "href": "articles/zhi-gei-dun/"
+  },
+  {
+    "src": "AI月报_2026年07月_v5.html",
+    "slug": "ai-yuebao-2026-07",
+    "title": "每月AI洞见：Transformer还在狂飙",
+    "date": "2026-07-31",
+    "excerpt": "AI新闻千千万，过段时间再看大都不值得关注。本月4条最重要的新闻，对应5个洞见。",
+    "original_mb": 0.64,
+    "html_mb": 0.01,
+    "media_mb": 25.28,
+    "images": 3,
+    "videos": 1,
+    "cover": "articles/ai-yuebao-2026-07/media/image-01.jpg",
+    "href": "articles/ai-yuebao-2026-07/"
+  },
+  {
     "src": "GPT live 语音v1.7.html",
     "slug": "gpt-live",
     "title": "GPT live语音，真正改变的，是交互思维方式",

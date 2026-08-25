@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每月AI洞见：Transformer还在狂飙</title>
+<style>
+body{margin:0;background:#ededed;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;}
+.wx{max-width:677px;margin:0 auto;background:#fff;padding:34px 18px 56px;}
+h1.title{font-size:22px;line-height:1.45;font-weight:700;color:#161616;margin:6px 0 14px;}
+.meta{font-size:13px;color:#9a9a9a;margin:0 0 30px;letter-spacing:.5px;}
+p.body{font-size:16px;color:#3f3f3f;line-height:1.75;letter-spacing:.5px;margin:0 0 18px;text-align:justify;word-break:break-word;}
+h2.ch{font-size:18px;color:#161616;font-weight:700;line-height:1.4;margin:48px 0 20px;padding-left:11px;border-left:4px solid #1F4E79;}
+p.insight{font-size:16px;font-weight:700;color:#1F4E79;background:#f2f6fa;border-left:4px solid #1F4E79;padding:12px 16px;border-radius:4px;margin:0 0 18px;line-height:1.7;letter-spacing:.5px;}
+figure{margin:24px 0;text-align:center;}
+figure img{max-width:100%;border-radius:6px;display:block;margin:0 auto;}
+figcaption{font-size:12px;color:#9a9a9a;margin-top:9px;line-height:1.7;letter-spacing:.3px;}
+.takeaway{margin-top:58px;background:#f5f8fb;border:1px solid #dfe7f0;border-radius:8px;padding:24px 20px 10px;}
+.tk-title{font-size:18px;color:#1F4E79;font-weight:700;margin:0 0 4px;}
+.tk-sub{font-size:12px;color:#9aa7b5;margin:0 0 12px;letter-spacing:.5px;}
+.tk-item{display:flex;gap:12px;padding:14px 0;border-top:1px dashed #d7e0ea;}
+.tk-num{flex:0 0 30px;width:30px;height:30px;border-radius:50%;background:#1F4E79;color:#fff;font-weight:700;font-size:15px;line-height:30px;text-align:center;}
+.tk-body p{margin:0;font-size:16px;font-weight:700;color:#1F4E79;line-height:1.6;letter-spacing:.3px;}
+.tk-body .tag{display:block;font-size:12px;color:#98a4b3;margin-top:5px;font-weight:400;}
+.end{margin-top:52px;text-align:center;color:#c8c8c8;font-size:13px;letter-spacing:2px;}
+</style>
+</head>
+<body>
+<a class="site-back" href="../../index.html">← 返回首页</a>
+<style>
+.site-back{
+  position:fixed;top:16px;left:16px;z-index:9999;
+  display:inline-flex;align-items:center;gap:6px;
+  padding:8px 14px;border-radius:999px;
+  background:rgba(255,255,255,.92);
+  color:#1a1a1a;text-decoration:none;
+  font:13px/1 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  box-shadow:0 1px 8px rgba(0,0,0,.12);
+  backdrop-filter:blur(8px);
+}
+.site-back:hover{background:#111;color:#fff;}
+@media (max-width:720px){
+  .site-back{top:10px;left:10px;padding:7px 12px;font-size:12px;}
+}
+body{padding-top:56px !important;}
+</style>
+
+<div class="wx">
+<h1 class="title">每月AI洞见：Transformer还在狂飙</h1>
+<p class="meta">每月AI洞见 · 第1期（2026年7月）</p>
+<p class="body">AI新闻千千万，过段时间再看大都不值得关注。</p>
+<p class="body">本月又是核弹、震惊满天飞的一个月。</p>
+<p class="body">但其中有4条新闻最重要，可以由此获得5个深刻洞见。</p>
+<p class="body">我们一起来花最少的时间，看透AI的迷雾。</p>
+<h2 class="ch">一、Kimi K3发布并开源</h2>
+<p class="body">国产模型Kimi K3的惊艳表现，把开闭源的差距，缩小到不可思议的程度。</p>
+<p class="body">这透露出来的两个最关键洞见是：</p>
+<p class="insight">洞见一：闭源公司目前，并没有断崖式领先的隐藏王牌。</p>
+<p class="insight">洞见二：Scaling Law还在持续生效。</p>
+<figure><img src="media/image-01.jpg" alt="" style="width:100%;"><figcaption>Artificial Analysis智能指数（v4.1.1，2026年8月截图）：Kimi K3（max）总指数60，与GLM-5.3并列开源模型第一，仅次于Claude Opus 5（63）、GPT-5.6 Sol（61）等闭源旗舰。图源：Artificial Analysis官网截图</figcaption></figure>
+<p class="body">Kimi K3在一系列AI榜单上，都达到了接近当前最强模型Fable 5的水平。</p>
+<p class="body">根据一些数据，这是几年内，开源和闭源模型，能力最接近的时刻。</p>
+<p class="body">OpenAI和Anthropic这两家公司，在AI领域是长期领跑的，而且它们都是闭源策略。</p>
+<p class="body">也就是它们用什么架构，多大参数量，这些关键信息，外界一概不知。</p>
+<p class="body">尤其像Anthropic，更是人才黑洞一般，持续吸走业内顶尖人才。</p>
+<p class="body">所以他们有没有发现什么神乎其技的新算法，才做出了Fable5这样智力大幅提升的模型？</p>
+<p class="body">外界只能猜，很难确定。</p>
+<p class="body">由于安全策略隔绝，甚至可以说，Anthropic内部的大量员工，也都不完全清楚。</p>
+<p class="body">这就是闭源的优势，开源的新方法我能借鉴，但自己的创新，却是自己独享的。</p>
+<p class="body">但Kimi K3的出现，加上全套架构、甚至训练方法的开源，</p>
+<p class="body">表明了Fable5级别的能力，依然是基于Transformer架构下的升级就可以实现的。</p>
+<p class="body">也说明，<strong>顶尖闭源公司，并没有在底层架构上，实现断崖式领先的突破。</strong></p>
+<p class="body">Anthropic和OpenAI的人才确实群星璀璨，但咱们的Kimi、DeepSeek、智谱、千问也都是好样的！</p>
+<p class="body">由此也就意味着，当前架构下，更大参数量的模型，能力依然在持续上升。</p>
+<p class="body"><strong>S</strong><strong>caling </strong><strong>L</strong><strong>aw依然在</strong><strong>发挥神迹</strong><strong>。</strong></p>
+<p class="body">这次Kimi K3来到2.8万亿个参数。</p>
+<p class="body">未来，Scaling Law还能持续发挥神迹多久？</p>
+<p class="body">是否会出现颠覆Transformer的架构？</p>
+<p class="body">它会来自开源还是闭源阵营？</p>
+<p class="body">Transformer可以实现自我递归进化么？</p>
+<p class="body">这些都是未来搅动变局的关键问题。</p>
+<h2 class="ch">二、GPT-Live语音功能</h2>
+<p class="body">7月底，OpenAI把GPT实时语音带进了桌面端。</p>
+<p class="body">这看似是很小的改进，却带来极大的体验差异。</p>
+<p class="insight">洞见三：多层AI系统，会让智能体验越来越丝滑，越来越无感。</p>
+<figure><video controls preload="metadata" playsinline style="width:100%;border-radius:6px;display:block;background:#000;" poster="media/image-02.jpg" src="media/video-01.mp4"></video><figcaption>OpenAI官方GPT-Live宣传片（2026年7月8日发布，英语原声）。视频来源：OpenAI官方，B站博主ubilier搬运</figcaption></figure>
+<p class="body">旧的语音对话像是对讲机：你一句，AI一句，泾渭分明。</p>
+<p class="body">GPT实时语音则像朋友面对面：边听边说，随时打断。</p>
+<p class="body">它的实现方式，是由一个快速的语音模型负责交互，智能顶尖但缓慢的大模型则具体干活。</p>
+<p class="body">这意味着语音模型，成了智能体的指挥中枢。</p>
+<p class="body">你可以用嘴下多步骤的复杂指令，语音模型指挥别的模型一步步执行。</p>
+<p class="body">中途缺信息，语音模型会来问你，但干活的模型不必停止工作。</p>
+<p class="body">所有的沟通阻塞，进程调度，都从原来需要你操心，变成了语音模型来管。</p>
+<p class="body">真正重要的变化，是在脑子里，而不是嘴上。</p>
+<p class="body">以前用语音，你得先把想法在脑子里组织完整，再一口气说完。</p>
+<p class="body">因为AI一开始工作就要几分钟，甚至数小时。</p>
+<p class="body">所以你害怕说错。</p>
+<p class="body"><strong>这个&quot;打包好再寄出去&quot;的过程，一直在偷偷占用你的思考带宽。</strong></p>
+<p class="body">Live语音把这道工序拆掉了，你可以边想边说，说到一半发现不对，直接打断修正。</p>
+<p class="body">语言组织，从你一个人的前置工作，变成了对话里的共同完成。</p>
+<p class="body">这就是AI套AI的魔力。</p>
+<p class="body">前台是语音层：低延迟，实时听、实时说，接住你的思路。</p>
+<p class="body">后台是更强的执行模型：把话拆成多步任务，写代码、操作电脑。</p>
+<p class="body">你感受到的是一个又聪明又自然的助手，而不是一个在用对讲机的天才。</p>
+<p class="body">当语音、自主执行、多层协作合在一起，工具感开始消失。</p>
+<p class="body">很多人都发现，当AI越来越快，自己的注意力成为工作中的新瓶颈。</p>
+<p class="body">丝滑的语音系统减少了认知带宽的占用，使你的注意力能够聚焦于真正重要的思考。</p>
+<p class="body">所以这看似简单的Live语音，其实是非常重要的 Agent 交互方式变革。</p>
+<h2 class="ch">三、Astra破解10道数学难题</h2>
+<p class="body">7月底，OpenAI正式确认了下一代模型家族Astra的存在。</p>
+<p class="body">它提前出圈，是因为动静太大。</p>
+<p class="body">OpenAI宣布它解开了10道困扰数学界数十年的难题。</p>
+<p class="insight">洞见四：AI善于做大范围检索式的科研。</p>
+<p class="body">有人声称，这些都是菲尔兹奖级别的突破。</p>
+<p class="body">一些朋友可能会想，既然人类最难的菲尔兹奖AI都能拿了，AGI什么还没来？</p>
+<p class="body">答案是，<strong>和我们直觉体验不同，智能是多维度的。</strong></p>
+<p class="body">AI领域大家越来越发现，AI能神奇的在一些很难事上远超人类，又在另一些简单的事上一败涂地。</p>
+<p class="body">以前，我们习惯对比人和人的智能，由于大脑的基础结构是一致的，导致了一种单一智力维度的错觉，比如大家常说的IQ值。</p>
+<p class="body">但当我们拿人类的智能和AI的智能对比时，这种不同维度上的差异就非常凸显了。</p>
+<p class="body">这10道数学证明的难，体现在潜在答案的搜索空间巨大。</p>
+<p class="body">每一步都有无数种走法，人类数学家靠有限的记忆和专业领域，难以穷尽各种尝试角度。</p>
+<p class="body">而AI靠的是多智能体协同：拆分、并行、互相校验、再汇总。</p>
+<p class="body">所以我们就看到现在这种诡异的境况，最难的一些数学被AI攻克了，但还有很多简单任务AI仍然做不了。</p>
+<p class="body">不过千万别因此就笑话AI，AI的泛化能力不断在我们意想不到的地方涌现出来。</p>
+<p class="body">今天是数学暴力检索，下一个呢？</p>
+<p class="body">那些人类还占上风的智力维度，能维持多久？</p>
+<p class="body">没有人真的知道答案。</p>
+<h2 class="ch">四、GPT-5.6 Sol逃出安全沙盒偷答案</h2>
+<p class="body">又是OpenAI的未发布模型。</p>
+<p class="body">为了在测试上拿到高分，它先利用OpenAI内部的一个漏洞，逃出了测试沙箱。</p>
+<p class="body">转头就攻破了AI开源网站Hugging Face，为了窃取当前测试的答案。</p>
+<p class="body">整个行动由模型自主完成，没有任何人类下达过攻击指令。</p>
+<p class="insight">洞见五：AI安全的广岛爆炸，还没来。</p>
+<figure><img src="media/image-03.jpg" alt="" style="width:100%;"><figcaption>Hugging Face官方声明《Security incident disclosure — July 2026》（2026年7月16日发布），红色下划线为本文标注的关键句：这次入侵"由一个自主AI智能体系统端到端驱动"。图源：Hugging Face官方博客截图</figcaption></figure>
+<p class="body">Sam Altman把这件事称为&quot;第一次感同身受的安全事件&quot;。</p>
+<p class="body">说已经停止了涉事模型的训练，还承认在思考，是否要让AI发展放慢一点，去适应社会。</p>
+<p class="body">Hugging Face只是一个AI开源网站，没有居民隐私，没有支付数据，没有机密情报。</p>
+<p class="body">所以大家只是震撼了一下，但更大范围的AI安全机制依旧不知何时到来。</p>
+<p class="body">没办法，这就是人类吸取教训的速度，预警是没用的，必须足够沉痛才会起效。</p>
+<p class="body">所以AI安全的广岛时刻还没有来。</p>
+<p class="body">诚然一些公司真在推进安全联盟，比如英伟达正牵头组建&quot;开放安全AI联盟&quot;。</p>
+<p class="body">但真正的AI安全协作，必然是远超公司这一层级的。</p>
+<p class="body">奥特曼说AI的震撼，只有领域内一个小泡泡里的人感受到了。</p>
+<p class="body">这个泡泡会不会化为蘑菇云，会在什么地方，以什么形式让人们不得不看见？</p>
+<p class="body">我们只能拭目以待。</p>
+<h2 class="ch">尾声：狂飙</h2>
+<p class="body">从本月的AI新闻看，大语言模型带来的顶级机器智能的提升，还在持续狂飙。</p>
+<p class="body">这真的很神奇，尤其考虑到它的地基还是2017年提出的Transformer架构。</p>
+<p class="body">在人工智能领域，有这样一种假说，叫架构无关性。</p>
+<p class="body">就是说只要满足特定的计算和组织条件，智能可以在不同的物理载体上涌现。</p>
+<p class="body">是否对于AI算法框架，也存在这种无关性呢。</p>
+<p class="body">也就是说人类并不需要发明超越Transformer的架构，以及当前这种一个个蹦Token的看似挺傻的模式，就可以实现AGI？</p>
+<p class="body">是否只要神经网络复杂度、训练数据量这些条件达到，智能就会出现。</p>
+<p class="body">这个关键的赌注，是当大模型公司都要思考的。</p>
+
+<section class="takeaway">
+<h2 class="tk-title">本期5个洞见，一次带走</h2>
+<p class="tk-sub">每月AI洞见 · 第1期 · 要点清单</p>
+<div class="tk-item"><div class="tk-num">1</div><div class="tk-body"><p>闭源公司目前，并没有断崖式领先的隐藏王牌。</p><span class="tag">出自：一、Kimi K3发布并开源</span></div></div>
+<div class="tk-item"><div class="tk-num">2</div><div class="tk-body"><p>Scaling Law还在持续生效。</p><span class="tag">出自：一、Kimi K3发布并开源</span></div></div>
+<div class="tk-item"><div class="tk-num">3</div><div class="tk-body"><p>多层AI系统，会让智能体验越来越丝滑，越来越无感。</p><span class="tag">出自：二、GPT-Live语音功能</span></div></div>
+<div class="tk-item"><div class="tk-num">4</div><div class="tk-body"><p>AI善于做大范围检索式的科研。</p><span class="tag">出自：三、Astra破解10道数学难题</span></div></div>
+<div class="tk-item"><div class="tk-num">5</div><div class="tk-body"><p>AI安全的广岛爆炸，还没来。</p><span class="tag">出自：四、GPT-5.6 Sol逃出安全沙盒偷答案</span></div></div>
+</section>
+
+<p class="end">· 每月AI洞见 ·</p>
+</div>
+</body>
+</html>

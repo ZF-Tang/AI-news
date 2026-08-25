@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>只给盾，不给矛？Anthropic的网安新模式</title>
+<style>
+body {
+  margin: 0;
+  background: #f7f7f7;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+.page {
+  max-width: 677px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 0 18px 48px;
+}
+.cover {
+  margin: 0 -18px 22px;
+}
+.cover img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  line-height: 1.5;
+  margin: 6px 0 28px;
+  letter-spacing: 0.4px;
+}
+h2 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #222;
+  border-left: 3px solid #000;
+  padding-left: 9px;
+  margin: 30px 0 16px;
+  line-height: 1.5;
+}
+p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.8;
+  letter-spacing: 0.4px;
+  margin: 0 0 14px;
+  text-align: justify;
+  word-break: break-word;
+}
+p.sep {
+  text-align: center;
+  color: #aaa;
+  font-size: 14px;
+  letter-spacing: 6px;
+  margin: 26px 0;
+}
+</style>
+</head>
+<body>
+<a class="site-back" href="../../index.html">← 返回首页</a>
+<style>
+.site-back{
+  position:fixed;top:16px;left:16px;z-index:9999;
+  display:inline-flex;align-items:center;gap:6px;
+  padding:8px 14px;border-radius:999px;
+  background:rgba(255,255,255,.92);
+  color:#1a1a1a;text-decoration:none;
+  font:13px/1 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  box-shadow:0 1px 8px rgba(0,0,0,.12);
+  backdrop-filter:blur(8px);
+}
+.site-back:hover{background:#111;color:#fff;}
+@media (max-width:720px){
+  .site-back{top:10px;left:10px;padding:7px 12px;font-size:12px;}
+}
+body{padding-top:56px !important;}
+</style>
+
+<div class="page">
+<figure class="cover"><img src="media/image-01.jpg" alt="只给盾，不给矛"></figure>
+<h1>只给盾，不给矛？Anthropic的网安新模式</h1>
+<p>8月21日，Anthropic决定，自家最强的网络安全模型Claude Mythos 5，现在可以给企业用了。</p>
+<p>但注意，开放的不是模型，而是一份扫描报告，模型本身还是摸不到。</p>
+<p>企业要想检查漏洞，只能上传代码，等Anthropic给出漏洞报告。</p>
+<p>对于网络安全，AI模型既是矛也是盾。</p>
+<p>在不同的人手里，它就展现出攻击和防守的两面性。</p>
+<p>如果模型随便用，那就是把矛和盾都交了出去。</p>
+<p>而现在Anthropic做的，就是矛和盾都收在手里，但可以替你撑起盾。</p>
+<p>为什么Anthropic要这样做？</p>
+<p>这套模式优缺点是什么？</p>
+<p>其他公司会效仿么？</p>
+<p>我们来逐一拆解。</p>
+<p class="sep">· · ·</p>
+<h2>发生了什么</h2>
+<p>Anthropic把它手上最强的模型，切成了两种卖法。</p>
+<p>一个叫Fable 5，面向大众。</p>
+<p>另一种叫Mythos 5，官方称是「目前世界上网络能力最强的模型」。</p>
+<p>面向大众的Fable 5有各种围栏，会拒绝回答大部分网络安全、生物这类高风险问题。</p>
+<p>你可以理解成：同一根矛，但去掉了矛头。</p>
+<p>大概是自己也感受到了Mythos 5的威力，Anthropic从一开始，就没打算把它做成谁都能聊的开放产品。</p>
+<p>4月，它把Mythos直接交给了受审的安全组织和关键软件维护方。</p>
+<p>但获得许可的只有区区50家，后来才扩到约150家。</p>
+<p>其他想用Mythos的公司，得加入Claude Security计划。</p>
+<p>这些公司是不能跟Mythos交流的。</p>
+<p>用法是连上你公司托管在GitHub上的代码仓库。</p>
+<p>GitHub是全球最大的代码托管平台，相当于程序员共用的巨型网盘。</p>
+<p>Mythos会去扫一遍，扫完交回一份报告：哪里有问题、多严重、建议怎么修。</p>
+<p>人必须过目，才能真正动代码。</p>
+<p>为什么即使对着这些愿意掏钱的大量公司，Anthropic还是不肯放开给他们用？</p>
+<p>Anthropic官方说得很直白：直接把Mythos交给企业用户，他们不放心。</p>
+<p>因为这等于交出去一把能对外攻击的武器：扫自己的代码是防护，扫别人的代码，就是攻击了。</p>
+<p>所以Anthropic牢牢封住Mythos，这理由至少听起来是挺负责的。</p>
+<p>而且用户，甚至于全球互联网，都因此可以更放心了。</p>
+<p>Mythos就像炸药桶，没人喜欢一个家家有炸药、人人有引爆开关的世界。</p>
+<p>毕竟6月，美国政府已经拉过一次闸——一度切断Mythos和Fable的访问，后来只恢复给获批的美国组织。</p>
+<p>既然听着合理，那Anthropic这套打法，其他大模型公司会跟进么？</p>
+<p>很难！</p>
+<p class="sep">· · ·</p>
+<h2>一、最利的矛，才配藏锋</h2>
+<p>Anthropic这套打法，前提是手里握着Top1的安全模型。</p>
+<p>如果没有那一档的能力，客户要模型，他又说不给，那客户会用脚投票教他做人。</p>
+<p>Anthropic敢把Mythos藏在安全扫描后面，是因为外面买不到同等的安全能力。</p>
+<p>目前看，只有同样握着强大未发布模型的OpenAI，也在尝试这个模式。</p>
+<p>对外，有一个叫Codex Security的企业产品，给公司扫代码漏洞。</p>
+<p>模型还会嵌进思科、CrowdStrike这些安全大厂已有的产品里，企业只拿结果，摸不到模型。</p>
+<p>而真正最利的那根矛，网络安全专用模型GPT-5.5-Cyber，不进普通客户的手，只留给少数通过审查的「红队」。</p>
+<p>红队，就是专门模拟攻击、帮防守方找漏洞的专业队伍。</p>
+<p>所以未来，Anthropic和OpenAI，还要持续这套模式，就必须保持自己的领先身位。</p>
+<p class="sep">· · ·</p>
+<h2>二、泼天的富贵？</h2>
+<p>有人可能会想：掌握最强的安全模型，拿去给企业扫仓库，不就是坐在了金山上？</p>
+<p>可咱们来算一算账，就会看到，根本不是这么回事。</p>
+<p>Claude Security的收费规则写得很清楚：按token计费，没有额外的平台费。</p>
+<p>扫一次是什么量级？安全公司Tenable拿自己的代码试了。</p>
+<p>一名工程师，一个月，37个仓库，大约101亿token，账单约4.2万美元。</p>
+<p>按这个量级往上推：即使是Twitter（X）那种体量的公司，认真扫一轮，也就大约几十万到一百万美元。</p>
+<p>把客户放大到两百家巨型公司，再算上一年反复扫、增量扫，乐观估计，这门生意一年也就十亿美元左右。</p>
+<p>而2026年7月底，Anthropic的年化收入约650亿美元。</p>
+<p>所以这个看着很高端的业务，对Anthropic来说约等于不赚钱。</p>
+<p>甚至安全这条线，还有一截在往外送钱。</p>
+<p>8月，Anthropic又宣布，拿出3500万美元的模型使用额度，白送给开源软件的安全维护。</p>
+<p>这样费力又没钱的方式，Anthropic为什么要干？</p>
+<p>是在替大家担当，还是另有算盘，比如把客户代码用作训练数据？</p>
+<p>至少按公开的商务条款，企业客户的代码和数据，Anthropic承诺不会拿去训练新模型。</p>
+<p>但也不是「扫完即焚」。</p>
+<p>代码会上传到Anthropic的云端，给Mythos读，按政策留存一段时间，默认约30天。</p>
+<p>所以企业拿到的是纸面上的承诺，不是「代码不出门」的物理级保证。</p>
+<p>至于为什么坚持做这门账算不平的生意，答案可能不在账本里——先看看外面的世界，变成什么样了。</p>
+<p class="sep">· · ·</p>
+<h2>三、损失不大，但格局全变了</h2>
+<p>看看今年AI黑客真打出来的损失，我们来一窥行业现状。</p>
+<p>今年金额最大的黑客得手，不是勒索，是朝鲜相关团伙偷加密货币。</p>
+<p>据区块链分析机构TRM Labs统计，截至4月，两家加密货币平台Drift和KelpDAO，分别被偷走约2.85亿和2.92亿美元。</p>
+<p>这是什么概念？</p>
+<p>已经逼近去年一整年，全球勒索团伙打进钱包的赎金总量，约8.2亿美元。</p>
+<p>图财团伙今年的高价单，几乎全是向受害者勒索。</p>
+<p>不少是先把数据偷走，再威胁：不给钱，就公开。</p>
+<p>据报道，律所WilmerHale实付大约1800万美元，Goodwin Procter大约1000万美元。</p>
+<p>学习平台Canvas被偷走2.75亿条用户数据，公司承认与攻击者达成了协议，但金额未知。</p>
+<p>再看AI亲自下场的那几起。</p>
+<p>一个人，用Anthropic公开售卖的AI编程助手Claude Code，就从墨西哥政府偷走大约1.95亿条税务记录。</p>
+<p>还有一伙更激进：干脆让AI自己完成攻击，行业里管这种叫「agent勒索软件」。</p>
+<p>不是人坐在电脑前操作，是AI代理自己一步步执行。</p>
+<p>他们进门的入口，是一个2025年就公开的旧漏洞。补丁早就有，很多公司一直没装。</p>
+<p>更荒诞的是，AI加密完数据，自己把钥匙弄丢了——受害者就算交钱，也拿不回数据。</p>
+<p>还有人把Claude Code装进已经被攻破的电脑，让它在公司内网里自己钻。</p>
+<p>提示词写得很糙，改几句措辞就能继续跑，最后打进了至少14家公司。</p>
+<p>另一伙人更省事：五周扫了55个国家，专挑那些后台入口大敞着、密码还很简单的FortiGate防火墙，一口气拿下六百多台。</p>
+<p>没有什么高深技术，就是挨家挨户推门，发现很多门根本没锁。</p>
+<p>冲击都不小：墨西哥丢的是国家级的身份数据，防火墙那起，碰的是全球公司的门。</p>
+<p>但注意，这些AI亲自下场的案子，没有一个挤进今年「实付上千万美元」的大案榜。</p>
+<p>还没有哪起AI攻击，复刻出2021年殖民管道那种社会级停摆。</p>
+<p>当时美国一条输油大动脉被勒索，东海岸一度加不上油。</p>
+<p>也没有复刻2025年捷豹路虎那种近20亿英镑的创伤—，当时生产整个停摆。</p>
+<p>但格局变了，攻防战在加速升级。</p>
+<p>以前，想做一次像样的模拟攻击，行话叫渗透测试。</p>
+<p>得有一个专业小组、几周时间，人人会用专业攻击工具。</p>
+<p>现在，一个人、一份AI订阅、就能把活儿干完。</p>
+<p>摸清目标，找到已知漏洞，在公司内网里一步步蔓延，最后把值钱的数据分拣打包。</p>
+<p>泰国财政部那起更彻底：攻击者用的是开源代理，设成全自动，一路不向人请示。</p>
+<p>因为软件装在自己机器上，厂商连封号的入口都找不到。</p>
+<p>目前看，被打穿的，都是同一类组织：后台入口大敞着、密码简单、漏洞常年不修。</p>
+<p>反过来，有专职安全团队、把门看紧的大公司，这套武器对它们仍然没什么便宜可占。</p>
+<p>所以2026年的真实画面是这样的。</p>
+<p>进攻侧，已经能用一份月费订阅，跑出流水线式的攻击。</p>
+<p>防守侧，大多数机构还在按老节奏运转：出了问题提工单，补丁按季度打。</p>
+<p>薄的一层正在被打穿。</p>
+<p>损失的账，暂时停在律所的一千万、政府的身份库、六百台防火墙。</p>
+<p>但今天如此，下个月呢？</p>
+<p class="sep">· · ·</p>
+<h2>洞见</h2>
+<p>回到这套只给盾，不给矛的AI安全方案。</p>
+<p>不论Anthropic初心如何，我们得承认，没有Mythos满大街的世界，确实更让人放心。</p>
+<p>但AI安全的攻防大战已经开启了，并且不会减速。</p>
+<p>从上面这些案子也能看出来，攻击者并不需要多少高大上的「零日漏洞」——那种只有攻击者知道、厂商还来不及修补的漏洞。</p>
+<p>他们用得最多的，是旧洞、弱密码，和一扇扇没锁的门。</p>
+<p>这个世界上，对AI来说近乎裸奔的公司和政府，太多了。</p>
+<p>当矛和盾都在快速升级，但持盾的一方，是迟钝的，怎么办？</p>
+<p>网安的游戏规则，将被迫迎来深刻的变革。</p>
+</div>
+</body>
+</html>

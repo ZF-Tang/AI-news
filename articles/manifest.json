@@ -14,6 +14,20 @@
     "href": "articles/zhi-gei-dun/"
   },
   {
+    "src": "Jalapeño_v8.html",
+    "slug": "jalapeno",
+    "title": "OpenAI下场造芯片，巨头们为何纷纷逃离英伟达",
+    "date": "2026-08-04",
+    "excerpt": "英伟达算力一骑绝尘，OpenAI、谷歌、亚马逊却争相下场造芯片。答案是一道简单的算术题。",
+    "original_mb": 0.78,
+    "html_mb": 0.01,
+    "media_mb": 0.24,
+    "images": 2,
+    "videos": 0,
+    "cover": "articles/jalapeno/media/image-01.jpg",
+    "href": "articles/jalapeno/"
+  },
+  {
     "src": "AI月报_2026年07月_v5.html",
     "slug": "ai-yuebao-2026-07",
     "title": "每月AI洞见：Transformer还在狂飙",

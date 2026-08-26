@@ -23,6 +23,13 @@ ARTICLES = [
         "excerpt": "最强网安模型可以给企业用了，但开放的不是模型，而是一份扫描报告。矛收在自己手里，只替你撑起盾。",
     },
     {
+        "src": "Jalapeño_v8.html",
+        "slug": "jalapeno",
+        "title": "OpenAI下场造芯片，巨头们为何纷纷逃离英伟达",
+        "date": "2026-08-04",
+        "excerpt": "英伟达算力一骑绝尘，OpenAI、谷歌、亚马逊却争相下场造芯片。答案是一道简单的算术题。",
+    },
+    {
         "src": "AI月报_2026年07月_v5.html",
         "slug": "ai-yuebao-2026-07",
         "title": "每月AI洞见：Transformer还在狂飙",
@@ -70,6 +77,8 @@ NAV_HTML = """
   .site-back{top:10px;left:10px;padding:7px 12px;font-size:12px;}
 }
 body{padding-top:56px !important;}
+.site-cover{margin:0 0 18px;}
+.site-cover img{width:100%;height:auto;display:block;}
 </style>
 """
 
@@ -107,6 +116,27 @@ def save_image(raw: bytes, dest_no_ext: Path) -> Path:
     out = dest_no_ext.with_suffix(".jpg")
     im.save(out, format="JPEG", quality=82, optimize=True, progressive=True)
     return out
+
+
+def inject_cover(html: str, article: dict, out_dir: Path) -> str:
+    """Insert cover.jpg above the first h1 if the article has no cover yet."""
+    cover = out_dir / "cover.jpg"
+    if not cover.exists():
+        return html
+    if re.search(r'<figure[^>]*class="[^"]*\bcover\b', html, re.IGNORECASE):
+        return html
+    if re.search(r'class="site-cover"', html):
+        return html
+    alt = (
+        article["title"]
+        .replace("&", "&amp;")
+        .replace('"', "&quot;")
+        .replace("<", "&lt;")
+    )
+    block = f'<figure class="site-cover"><img src="cover.jpg" alt="{alt}"></figure>\n'
+    if re.search(r"<h1\b", html, re.IGNORECASE):
+        return re.sub(r"(<h1\b)", block + r"\1", html, count=1, flags=re.IGNORECASE)
+    return html
 
 
 def process(article: dict) -> dict:
@@ -163,6 +193,8 @@ def process(article: dict) -> dict:
     else:
         html = NAV_HTML + html
 
+    html = inject_cover(html, article, out_dir)
+
     (out_dir / "index.html").write_text(html, encoding="utf-8")
 
     sizes = {
@@ -180,7 +212,23 @@ def process(article: dict) -> dict:
 
 def main() -> int:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    manifest = [process(a) for a in ARTICLES]
+    slugs = sys.argv[1:]
+    selected = [a for a in ARTICLES if a["slug"] in slugs] if slugs else ARTICLES
+    if slugs and not selected:
+        print(f"unknown slug(s): {slugs}", file=sys.stderr)
+        return 1
+    results = [process(a) for a in selected]
+    if slugs:
+        by_slug = {}
+        man = OUT_DIR / "manifest.json"
+        if man.exists():
+            for item in json.loads(man.read_text(encoding="utf-8")):
+                by_slug[item["slug"]] = item
+        for item in results:
+            by_slug[item["slug"]] = item
+        manifest = [by_slug[a["slug"]] for a in ARTICLES if a["slug"] in by_slug]
+    else:
+        manifest = results
     (OUT_DIR / "manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
     )

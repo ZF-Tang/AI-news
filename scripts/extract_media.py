@@ -16,6 +16,13 @@ OUT_DIR = ROOT / "articles"
 
 ARTICLES = [
     {
+        "src": "机器人运动会门道_v2.1.html",
+        "slug": "jiqiren-yundonghui",
+        "title": "田径运动Alpha Go时刻，百米跑比人类记录快出1秒！",
+        "date": "2026-08-26",
+        "excerpt": "天工Ultra以8.64秒跑完百米，比博尔特的人类纪录快近1秒。第二届人形机器人运动会，热闹背后是行业变革。",
+    },
+    {
         "src": "只给盾不给矛 v3.html",
         "slug": "zhi-gei-dun",
         "title": "只给盾，不给矛？Anthropic的网安新模式",

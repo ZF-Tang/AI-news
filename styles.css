@@ -29,6 +29,19 @@ a { color: inherit; }
   width: min(960px, calc(100% - 40px));
   margin: 0 auto;
   padding: 22px 0 56px;
+  position: relative;
+  z-index: 1;
+}
+
+/* 页面背景图（用户在预览工具中确定的参数） */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: url("bg-avatar.jpg") no-repeat 81% 50% / 137% auto;
+  opacity: 1.00;
 }
 
 header.site {

@@ -52,7 +52,7 @@ header.site {
 .site .lede {
   margin: 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .article-list {
@@ -67,6 +67,7 @@ header.site {
   align-items: center;
   background: var(--paper);
   border: 1px solid var(--line);
+  border-radius: 14px;
   text-decoration: none;
   color: inherit;
   overflow: hidden;
@@ -86,6 +87,8 @@ header.site {
 .cover {
   display: block;
   height: 128px;
+  margin: 12px 0 12px 12px;
+  border-radius: 10px;
   background: #e7e0d4;
   overflow: hidden;
 }
@@ -150,6 +153,175 @@ header.site {
   display: none;
 }
 
+/* ===== 最新视频：海报式置顶（方案C） ===== */
+.sec-v {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin: 4px 0 14px;
+  color: var(--accent);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .32em;
+}
+
+.poster {
+  display: block;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent);
+  border-radius: 14px;
+  box-shadow: 0 14px 30px rgba(28, 25, 23, .13);
+  margin-bottom: 28px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.poster:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(28, 25, 23, .17);
+}
+
+.poster-media {
+  position: relative;
+  height: 400px;
+  background: #17120e;
+}
+
+.poster-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.poster-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(18, 14, 10, .22) 0%, rgba(18, 14, 10, 0) 30%, rgba(18, 14, 10, 0) 50%, rgba(18, 14, 10, .62) 100%);
+  pointer-events: none;
+}
+
+.ptag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--accent);
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+  letter-spacing: .2em;
+  padding: 5px 13px;
+  border-radius: 999px;
+}
+
+.play-lg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: rgba(20, 15, 10, .4);
+  border: 2px solid rgba(255, 255, 255, .85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.poster:hover .play-lg {
+  transform: translate(-50%, -50%) scale(1.06);
+  background: rgba(154, 52, 18, .55);
+}
+
+.play-lg svg {
+  margin-left: 7px;
+}
+
+.pbili {
+  position: absolute;
+  left: 18px;
+  bottom: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, .9);
+  background: rgba(20, 15, 10, .5);
+  padding: 3px 11px;
+  border-radius: 6px;
+}
+
+.pdur {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  color: #fff;
+  background: rgba(20, 15, 10, .6);
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+.poster-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 26px 19px;
+}
+
+.poster-bar h2 {
+  margin: 0 0 5px;
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+.poster-bar p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.pcta {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 13.5px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.sec {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 12.5px;
+  letter-spacing: .3em;
+}
+
+.sec::before,
+.sec::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
 footer.site {
   margin-top: 28px;
   padding-top: 14px;
@@ -164,9 +336,16 @@ footer.site {
   .card,
   .card.featured { grid-template-columns: 168px 1fr; gap: 14px; }
   .cover,
-  .card.featured .cover { height: 86px; }
+  .card.featured .cover { height: 86px; margin: 8px 0 8px 8px; border-radius: 8px; }
   .body,
   .card.featured .body { padding: 10px 12px 10px 0; }
   .card h2 { font-size: 16px; }
   .card.featured h2 { font-size: 18px; }
+  .poster-media { height: 210px; }
+  .play-lg { width: 56px; height: 56px; }
+  .play-lg svg { width: 24px; height: 24px; margin-left: 4px; }
+  .pbili { display: none; }
+  .poster-bar { flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px 16px 16px; }
+  .poster-bar h2 { font-size: 19px; }
+  .poster-bar p { font-size: 14px; }
 }
